@@ -26,8 +26,8 @@ const AlbumCoverWrapper = styled.div<{image?: string;}>`
   }
 
   @media(max-width: 400px) {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
   
   z-index: 9;

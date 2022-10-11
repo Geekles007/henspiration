@@ -33,8 +33,8 @@ const PlayerUIWrapper = styled.div`
     height: 370px;
 
     @media(max-width: 400px) {
-      width: 270px;
-      height: 270px;
+      width: 300px;
+      height: 300px;
     }
   }
   

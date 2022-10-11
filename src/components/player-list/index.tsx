@@ -24,8 +24,8 @@ const PlayerListWrapper = styled.div`
   align-items: stretch;
 
   @media(max-width: 400px) {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
   
   &._active {
