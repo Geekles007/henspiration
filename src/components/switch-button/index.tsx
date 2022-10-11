@@ -10,6 +10,8 @@ const SwitchButtonWrapper = styled.button`
   font-size: 1.4rem;
   background-color: transparent;
   border-radius: .5rem;
+  
+  color: #fff;
 `;
 
 type SwitchButtonProps = {

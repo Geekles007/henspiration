@@ -33,6 +33,7 @@ const TrackItemWrapper = styled.button`
   -moz-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.22);
   
   width: 100%;
+  color: #fff;
 
   ._left {
     display: flex;

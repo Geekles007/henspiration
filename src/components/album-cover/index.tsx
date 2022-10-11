@@ -23,6 +23,7 @@ const AlbumCoverWrapper = styled.div<{image?: string;}>`
   
   ._switch {
     position: absolute;
+    top: 1rem;
   }
 
   @media(max-width: 400px) {
