@@ -75,9 +75,9 @@ export function useAudioPlayer (tracks: ITrack[]) {
         setCurTime(audioRef.current.currentTime);
 
         if (isReady.current) {
-            audioRef.current.play();
-            setPlaying(true);
-            startTimer();
+            // audioRef.current.play();
+            // setPlaying(true);
+            // startTimer();
         } else {
             isReady.current = true;
         }

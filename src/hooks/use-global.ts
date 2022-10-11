@@ -7,6 +7,7 @@ export function useGlobal() {
     const [token, setToken] = useState<string>('');
     const [album, setAlbum] = useState<IAlbum | null>(null);
     const [random, setRandom] = useState(false);
+    const [repeat, setRepeat] = useState(false);
 
     return {
         showList,
@@ -18,6 +19,8 @@ export function useGlobal() {
         token,
         album,
         random,
-        setRandom
+        setRandom,
+        setRepeat,
+        repeat
     }
 }

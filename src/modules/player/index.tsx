@@ -9,6 +9,7 @@ import usePlayer from "../../hooks/use-player";
 import AudioReader from "../../components/audio-reader";
 import {useAudioPlayer} from "../../hooks/use-audio-player";
 import PlayerProgress from "../../components/player-progress";
+import HeaderUI from "../../components/header";
 
 const PlayerUIWrapper = styled.div`
   display: flex;
@@ -63,10 +64,7 @@ const PlayerUIWrapper = styled.div`
   }
 
   ._controls {
-    position: absolute;
-    bottom: -130px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 2rem;
     display: flex;
     z-index: 99;
     flex-direction: column;
@@ -105,6 +103,7 @@ const PlayerUI = ({}: PlayerUIProps) => {
 
     return <PlayerUIWrapper>
         {/*<AudioReader reference={audio} />*/}
+        <HeaderUI url={album?.external_urls?.spotify ?? "#"} />
         <strong>{album?.tracks?.items?.[currentIndex]?.name}</strong>
         <a href={album?.external_urls?.spotify ?? "#"} target={"_blank"}><span className="_name">{album?.artists?.[0]?.name}</span></a>
         <div className="_stacked">
