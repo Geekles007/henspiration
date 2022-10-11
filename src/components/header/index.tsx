@@ -5,7 +5,6 @@ import {theme} from "../../theme";
 
 const HeaderUIWrapper = styled.div`
   margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
