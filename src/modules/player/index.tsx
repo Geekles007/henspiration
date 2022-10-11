@@ -82,6 +82,34 @@ const PlayerUIWrapper = styled.div`
     top: 1rem;
     left: 1rem;
   }
+
+  ._integral {
+    backdrop-filter: blur(50px);
+    //background-color: ${({theme}) => theme.white};
+    padding: .3rem .8rem;
+    border-radius: 50px;
+    font-size: .9rem;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    position: absolute;
+    bottom: 1rem;
+
+    span {
+      transition: all .5s 0s ease-in-out;
+      color: ${({theme}) => theme.white};
+
+      &:hover {
+        color: ${({theme}) => theme.spotify};
+      }
+    }
+
+    strong {
+      font-size: .9rem;
+    }
+  }
 `;
 
 type PlayerUIProps = {}
@@ -103,11 +131,11 @@ const PlayerUI = ({}: PlayerUIProps) => {
 
     return <PlayerUIWrapper>
         {/*<AudioReader reference={audio} />*/}
-        <HeaderUI url={album?.external_urls?.spotify ?? "#"} />
+        <HeaderUI />
         <strong>{album?.tracks?.items?.[currentIndex]?.name}</strong>
         <a href={album?.external_urls?.spotify ?? "#"} target={"_blank"}><span className="_name">{album?.artists?.[0]?.name}</span></a>
         <div className="_stacked">
-            <AlbumCover cover={album?.images?.[0]?.url ?? ""} />
+            <AlbumCover url={album?.external_urls?.spotify ?? "#"} cover={album?.images?.[0]?.url ?? ""} />
             <PlayerList tracks={album?.tracks?.items ?? []} />
         </div>
         <div className="_controls">

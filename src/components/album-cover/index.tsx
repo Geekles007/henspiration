@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Controls from "../controls";
 import SwitchButton from "../switch-button";
 import {AppContext} from "../../App";
+import {FaSpotify} from "react-icons/fa";
+import {theme} from "../../theme";
 
 const AlbumCoverWrapper = styled.div<{image?: string;}>`
   width: 350px;
@@ -41,14 +43,19 @@ const AlbumCoverWrapper = styled.div<{image?: string;}>`
 
 type AlbumCoverProps = {
     cover?: string;
+    url: string;
 }
 
-const AlbumCover = ({cover}: AlbumCoverProps) => {
+const AlbumCover = ({cover, url}: AlbumCoverProps) => {
 
     const {showList} = useContext(AppContext);
 
     return <AlbumCoverWrapper image={cover} className={showList ? "_inactive" : "_active"}>
         <SwitchButton className={"_switch"} />
+        <a href={url} target={"_blank"} className="_integral">
+            <FaSpotify color={theme.spotify} />
+            <span>Integral album on <strong>spotify</strong></span>
+        </a>
     </AlbumCoverWrapper>
 
 }

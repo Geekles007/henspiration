@@ -28,48 +28,19 @@ const HeaderUIWrapper = styled.div`
       filter: drop-shadow(0 0 10px ${({theme}) => theme.primary});
     }
   }
-  
-  ._integral {
-    backdrop-filter: blur(50px);
-    background-color: ${({theme}) => theme.black};
-    padding: .3rem .8rem;
-    border-radius: 50px;
-    font-size: .9rem;
-    
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    
-    span {
-      transition: all .5s 0s ease-in-out;
-      color: ${({theme}) => theme.white};
-      
-      &:hover {
-        color: ${({theme}) => theme.spotify};
-      }
-    }
-    
-    strong {
-      font-size: .9rem;
-    }
-  }
 `;
 
 type HeaderUIProps = {
-    url: string;
 }
 
-const HeaderUI = ({url}: HeaderUIProps) => {
+const HeaderUI = ({}: HeaderUIProps) => {
 
     return <HeaderUIWrapper>
         <div className="_actions">
             <a href="https://twitter.com/hensBenga" target={"_blank"} className={"_twitter"}><FaTwitter color={theme.twitter} /></a>
             <a href="https://www.tiktok.com/@hens_jacob" className={"_tiktok"} target={"_blank"}><FaTiktok color={theme.primary} /></a>
         </div>
-        <a href={url} target={"_blank"} className="_integral">
-            <FaSpotify color={theme.spotify} />
-            <span>Integral album on <strong>spotify</strong></span>
-        </a>
+
     </HeaderUIWrapper>
 
 }
