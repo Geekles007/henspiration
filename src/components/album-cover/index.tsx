@@ -18,6 +18,18 @@ const AlbumCoverWrapper = styled.div<{image?: string;}>`
   left: 0;
   opacity: 1;
   
+  display: flex;
+  flex-direction: column;
+  
+  ._switch {
+    position: absolute;
+  }
+
+  @media(max-width: 400px) {
+    width: 250px;
+    height: 250px;
+  }
+  
   z-index: 9;
   
   transition: all .5s 0s ease-in-out;

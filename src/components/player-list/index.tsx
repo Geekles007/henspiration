@@ -14,9 +14,19 @@ const PlayerListWrapper = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
+  overflow-y: scroll;
   
   z-index: 1;
   transition: all .5s 0s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @media(max-width: 400px) {
+    width: 250px;
+    height: 250px;
+  }
   
   &._active {
     backdrop-filter: blur(50px);
@@ -30,10 +40,9 @@ const PlayerListWrapper = styled.div`
   ._list {
     display: flex;
     flex-direction: column;
-    padding: 50px 1rem;
+    padding: 30px 1rem;
     gap: 1rem;
 
-    overflow-y: scroll;
     height: 100%;
   }
 `;

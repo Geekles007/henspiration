@@ -31,6 +31,11 @@ const PlayerUIWrapper = styled.div`
     position: relative;
     width: 370px;
     height: 370px;
+
+    @media(max-width: 400px) {
+      width: 270px;
+      height: 270px;
+    }
   }
   
   a:hover {
@@ -75,7 +80,7 @@ const PlayerUIWrapper = styled.div`
   }
 
   ._switch {
-    position: absolute;
+    position: sticky;
     top: 1rem;
     left: 1rem;
   }
