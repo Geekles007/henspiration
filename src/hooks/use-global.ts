@@ -6,6 +6,7 @@ export function useGlobal() {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [token, setToken] = useState<string>('');
     const [album, setAlbum] = useState<IAlbum | null>(null);
+    const [random, setRandom] = useState(false);
 
     return {
         showList,
@@ -15,6 +16,8 @@ export function useGlobal() {
         setAlbum,
         setToken,
         token,
-        album
+        album,
+        random,
+        setRandom
     }
 }

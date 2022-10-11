@@ -8,10 +8,9 @@ function getRandom(max: number) {
 
 export function useAudioPlayer (tracks: ITrack[]) {
 
-    const {currentIndex, setCurrentIndex} = useContext(AppContext);
+    const {currentIndex, setCurrentIndex, random} = useContext(AppContext);
 
     const [playing, setPlaying] = useState(false);
-    const [random, setRandom] = useState(false);
     const [clickedTime, setClickedTime] = useState<any>();
     const [curTime, setCurTime] = useState<number>();
     var audioSrc = tracks[currentIndex]?.preview_url;
@@ -76,9 +75,9 @@ export function useAudioPlayer (tracks: ITrack[]) {
         setCurTime(audioRef.current.currentTime);
 
         if (isReady.current) {
-            // audioRef.current.play();
-            // setPlaying(true);
-            // startTimer();
+            audioRef.current.play();
+            setPlaying(true);
+            startTimer();
         } else {
             isReady.current = true;
         }
@@ -115,8 +114,6 @@ export function useAudioPlayer (tracks: ITrack[]) {
         handleNext,
         curTime,
         duration,
-        setClickedTime,
-        setRandom,
-        random
+        setClickedTime
     }
 }

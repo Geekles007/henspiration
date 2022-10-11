@@ -1,17 +1,21 @@
-import React, {memo} from "react";
+import React, {memo, useContext} from "react";
 import styled from "styled-components";
 import {BiShuffle} from "react-icons/all";
+import {AppContext} from "../../App";
+import {theme} from "../../theme";
 
 const ShuffleButtonWrapper = styled.a`
-
+    
 `;
 
 type ShuffleButtonProps = {}
 
 const ShuffleButton = ({}: ShuffleButtonProps) => {
 
-    return <ShuffleButtonWrapper>
-        <BiShuffle size={22} />
+    const {random, setRandom} = useContext(AppContext);
+
+    return <ShuffleButtonWrapper onClick={() => setRandom((old: boolean) => !old)}>
+        <BiShuffle size={22} color={random ? theme.primary : theme.white} />
     </ShuffleButtonWrapper>
 
 }
