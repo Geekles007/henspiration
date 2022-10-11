@@ -13,7 +13,7 @@ const HeaderUIWrapper = styled.div`
   ._actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1rem;
     
     a {
