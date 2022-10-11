@@ -2,11 +2,16 @@ import {useContext, useEffect, useRef, useState} from "react";
 import {AppContext} from "../App";
 import {ITrack} from "../models/IAlbum";
 
+function getRandom(max: number) {
+    return Math.floor(Math.random() * max);
+}
+
 export function useAudioPlayer (tracks: ITrack[]) {
 
     const {currentIndex, setCurrentIndex} = useContext(AppContext);
 
     const [playing, setPlaying] = useState(false);
+    const [random, setRandom] = useState(false);
     const [clickedTime, setClickedTime] = useState<any>();
     const [curTime, setCurTime] = useState<number>();
     var audioSrc = tracks[currentIndex]?.preview_url;
@@ -71,9 +76,9 @@ export function useAudioPlayer (tracks: ITrack[]) {
         setCurTime(audioRef.current.currentTime);
 
         if (isReady.current) {
-            audioRef.current.play();
-            setPlaying(true);
-            startTimer();
+            // audioRef.current.play();
+            // setPlaying(true);
+            // startTimer();
         } else {
             isReady.current = true;
         }
@@ -110,6 +115,8 @@ export function useAudioPlayer (tracks: ITrack[]) {
         handleNext,
         curTime,
         duration,
-        setClickedTime
+        setClickedTime,
+        setRandom,
+        random
     }
 }

@@ -40,8 +40,6 @@ const PlayerProgress = ({duration, currentTime, onTimeUpdate}: PlayerProgressPro
 
     const percent: number = ((currentTime ?? 0) / (duration ?? 0)) * 100;
 
-    console.log(percent)
-
     const calcClickedTime = (e: any) => {
         const clickPositionInPage = e.pageX;
         const bar: any = document.querySelector("._progress");

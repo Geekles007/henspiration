@@ -20,10 +20,13 @@ const AlbumCoverWrapper = styled.div<{image?: string;}>`
   
   display: flex;
   flex-direction: column;
+  align-items: center;
   
   ._switch {
     position: absolute;
-    top: 1rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(50px);
+    padding: 5px 15px;
   }
 
   @media(max-width: 400px) {
