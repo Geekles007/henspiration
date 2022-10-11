@@ -92,9 +92,16 @@ export function useAudioPlayer (tracks: ITrack[]) {
     }, []);
 
     const handleNext = () => {
-        if (currentIndex < tracks.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-        } else setCurrentIndex(0);
+        if(random) {
+            const current = getRandom(tracks?.length ?? 0);
+            if (current < tracks.length - 1) {
+                setCurrentIndex(current);
+            } else setCurrentIndex(0);
+        } else {
+            if (currentIndex < tracks.length - 1) {
+                setCurrentIndex(currentIndex + 1);
+            } else setCurrentIndex(0);
+        }
     };
 
     const handlePrev = () => {
