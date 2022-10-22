@@ -3,7 +3,7 @@ import {AppContext} from "../App";
 import {ITrack} from "../models/IAlbum";
 
 function getRandom(max: number) {
-    return Math.floor(Math.random() * max);
+    return Math.floor(Math.random() * (max + 1));
 }
 
 export function useAudioPlayer (tracks: ITrack[]) {

@@ -69,8 +69,8 @@ const PlayAndPauseButton = ({playing, setPlaying}: PlayAndPauseButtonProps) => {
         <div className="_content">
             {
                 !playing ?
-                    <FaPlay size={12} color={theme.white} className={"button--icon"} /> :
-                    <FaPause size={12} color={theme.white} className={"button--icon"} />
+                    <FaPlay role="play" size={12} color={theme.white} className={"button--icon"} /> :
+                    <FaPause role="pause" size={12} color={theme.white} className={"button--icon"} />
             }
         </div>
     </PlayAndPauseButtonWrapper>
