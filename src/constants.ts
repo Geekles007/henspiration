@@ -5,4 +5,4 @@ export const clientId = env.VITE_SPOTIFY_CLIENT_ID;
 export const clientSecret = env.VITE_SPOTIFY_CLIENT_SECRET;
 export const authEndpoint = env.VITE_SPOTIFY_AUTH_ENDPOINT;
 export const responseType = "token";
-export const henspirationAlbumId = "5Q2V8XUHWfmmgweO0E7Twf";
+export const henspirationAlbumId = "2qbQIHYRKTrihtEBuakh0r";
