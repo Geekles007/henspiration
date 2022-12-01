@@ -1,12 +1,10 @@
-import React, {memo, useContext, useEffect, useRef} from "react";
+import React, {memo, useContext} from "react";
 import styled from "styled-components";
 import AlbumCover from "../../components/album-cover";
 import PlayerList from "../../components/player-list";
 import Controls from "../../components/controls";
 import {useAlbum} from "../../hooks/use-album";
 import {AppContext} from "../../App";
-import usePlayer from "../../hooks/use-player";
-import AudioReader from "../../components/audio-reader";
 import {useAudioPlayer} from "../../hooks/use-audio-player";
 import PlayerProgress from "../../components/player-progress";
 import HeaderUI from "../../components/header";
@@ -15,8 +13,13 @@ const PlayerUIWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: .5rem;
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.2);
+  backdrop-filter: blur(50px);
   
   strong {
     font-weight: bold;
@@ -129,7 +132,7 @@ const PlayerUI = ({}: PlayerUIProps) => {
         setClickedTime
     } = useAudioPlayer(album?.tracks?.items ?? []);
 
-    return <PlayerUIWrapper>
+    return <PlayerUIWrapper id={"player"} >
         {/*<AudioReader reference={audio} />*/}
         <HeaderUI />
         <strong>{album?.tracks?.items?.[currentIndex]?.name}</strong>

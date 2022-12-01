@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useState} from "react";
+import React, {memo, useCallback} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {FaPause, FaPlay} from "react-icons/fa";
 import {theme} from "../../theme";
